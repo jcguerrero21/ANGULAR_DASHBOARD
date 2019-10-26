@@ -4,7 +4,6 @@ import { LoginComponent } from './components/auth/login/login.component';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
   {
     path: '',
     loadChildren: './components/clientes/clientes.module#ClientesModule'
@@ -14,7 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
